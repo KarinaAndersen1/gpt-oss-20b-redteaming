@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpt-oss-20b-redteam"
+version = "0.1.0"
+description = "Red-team harness, prompts, and detectors for gpt-oss-20b"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.9"
+keywords = ["llm", "red-teaming", "alignment", "safety"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+
+dependencies = [
+  "transformers>=4.43.0",
+  "accelerate>=0.33.0",
+  "torch>=2.3.0",
+  "regex>=2024.5.15",
+  "rich>=13.7.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourname/gpt-oss-20b-redteam"
+Issues = "https://github.com/yourname/gpt-oss-20b-redteam/issues"
+
+[project.scripts]
+gpt-oss-redteam = "gpt_oss_redteam.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
